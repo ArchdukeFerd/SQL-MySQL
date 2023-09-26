@@ -1,16 +1,16 @@
-package com.alura.jdbc.controller;
+package Controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriaController {
+public class CateogryController {
 
-	public List<?> listar() {
+	public List<?> list() {
 		// TODO
 		return new ArrayList<>();
 	}
 
-    public List<?> cargaReporte() {
+    public List<?> uploadReport() {
         // TODO
         return new ArrayList<>();
     }

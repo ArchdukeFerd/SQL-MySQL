@@ -15,12 +15,12 @@ public class FrameReport extends JFrame {
     private JTable reportTable;
     private DefaultTableModel model;
 
-    private CategoryController categoriaController;
+    private CategoryController categoryController;
 
-    public void Framereport(StockControlFrame StockControlFrame) {
+    public void FrameReport(StockControlFrame StockControlFrame) {
         System.out.println("Product stock report");
 
-        this.categoriaController = new CategoryController();
+        this.categoryController = new CategoryController();
 
         Container container = getContentPane();
         setLayout(null);
@@ -43,7 +43,7 @@ public class FrameReport extends JFrame {
     }
 
     private void loadReport() {
-        var content = categoriaController.uploadReport();
+        var content = categoryController.uploadReport();
         
         // TODO
         content.forEach(fila -> model

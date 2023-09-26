@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.Optional;
 
 import javax.swing.JButton;
@@ -208,7 +209,11 @@ public class StockControlFrame extends JFrame {
     }
 
     private void loadTable() {
+        try{
         var products = this.productController.list();
+        } catch (SQLException e){
+            throw new RuntimeException(e);
+        }
 
         try {
             // TODO

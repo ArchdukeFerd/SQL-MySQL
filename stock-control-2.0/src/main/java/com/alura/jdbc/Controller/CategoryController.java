@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CategoryController {
 
-	public List<?> List() {
+	public List<?> list() {
 		// TODO
 		return new ArrayList<>();
 	}

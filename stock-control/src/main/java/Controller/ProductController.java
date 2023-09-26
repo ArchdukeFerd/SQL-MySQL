@@ -1,4 +1,4 @@
-package com.alura.jdbc.controller;
+package Controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
