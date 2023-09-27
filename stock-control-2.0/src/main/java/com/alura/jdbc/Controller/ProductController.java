@@ -18,11 +18,11 @@ public class ProductController {
 	}
 
 	public List<?> list() throws SQLException{
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/stock_control?useTimeZone=true&serverTimeZone=UTC","archdukeferdinand","Chuu2koi!");
+/* 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/stock_control?useTimeZone=true&serverTimeZone=UTC","root","root");
 		Statement statement = con.createStatement();
 		boolean result = statement.execute("SELECT Id, Name, Description, Quantity FROM PRODUCT");
 		System.out.println(result);
-		con.close();
+		con.close(); */
 		return new ArrayList<>();
 	}
 
