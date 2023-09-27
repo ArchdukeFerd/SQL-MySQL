@@ -2,7 +2,7 @@ package com.alura.jdbc;
 
 import javax.swing.JFrame;
 
-import com.alura.jdbc.view.StockControlFrame;
+import com.alura.jdbc.View.StockControlFrame;
 
 public class StockControlMain {
 

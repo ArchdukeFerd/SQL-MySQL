@@ -1,4 +1,4 @@
-package com.alura.jdbc.view;
+package com.alura.jdbc.View;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -16,8 +16,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import com.alura.jdbc.controller.CategoryController;
-import com.alura.jdbc.controller.ProductController;
+import com.alura.jdbc.Controller.CategoryController;
+import com.alura.jdbc.Controller.ProductController;
 
 public class StockControlFrame extends JFrame {
 
@@ -99,7 +99,7 @@ public class StockControlFrame extends JFrame {
         categoryCombo.addItem("Pick a Category");
 
         // TODO
-        var categories = this.categoryController.List();
+        var categories = this.categoryController.list();
         // categorias.forEach(categoria -> comboCategoria.addItem(categoria));
 
         nameText.setBounds(10, 25, 265, 20);
@@ -244,7 +244,7 @@ public class StockControlFrame extends JFrame {
         var product = new Object[] { nameText.getText(), descriptionText.getText(), qauntityInt };
         var category = categoryCombo.getSelectedItem();
 
-        this.productController.save(Product);
+        this.productController.save(product);
 
         JOptionPane.showMessageDialog(this, "Successfully registered");
 

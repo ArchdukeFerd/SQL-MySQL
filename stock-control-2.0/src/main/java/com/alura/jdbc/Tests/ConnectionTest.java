@@ -1,4 +1,4 @@
-package com.alura.jdbc.pruebas;
+package com.alura.jdbc.Tests;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,8 +8,8 @@ public class ConnectionTest {
     public static void main(String[] args) throws SQLException {
         Connection con = DriverManager.getConnection(
                 "jdbc:mysql://localhost/stock_control?useTimeZone=true&serverTimeZone=UTC",
-                "archdukeferdinand",
-                "Chuu2koi!");
+                "root",
+                "root");
 
         System.out.println("Closing Connection");
 

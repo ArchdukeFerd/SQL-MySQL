@@ -1,4 +1,4 @@
-package com.alura.jdbc.view;
+package com.alura.jdbc.View;
 
 import java.awt.Container;
 
@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import com.alura.jdbc.controller.CategoryController;
+import com.alura.jdbc.Controller.CategoryController;
 
 public class FrameReport extends JFrame {
 
