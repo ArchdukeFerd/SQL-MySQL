@@ -2,10 +2,13 @@ package com.alura.jdbc.Controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ProductController {
 
@@ -17,13 +20,24 @@ public class ProductController {
 		// TODO
 	}
 
-	public List<?> list() throws SQLException{
-/* 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/stock_control?useTimeZone=true&serverTimeZone=UTC","root","root");
+	public List<Map<String, String>> list() throws SQLException{
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/stock_control?useTimeZone=true&serverTimeZone=UTC","archdukeferdinand","Chuu2koi!");
 		Statement statement = con.createStatement();
-		boolean result = statement.execute("SELECT Id, Name, Description, Quantity FROM PRODUCT");
-		System.out.println(result);
-		con.close(); */
-		return new ArrayList<>();
+		statement.execute("select Id, Name, Description, Quantity from product");
+		ResultSet resultSet = statement.getResultSet();
+		List<Map<String, String>> result = new ArrayList<>();
+		while(resultSet.next()){
+			Map<String, String> row = new HashMap<>();
+			row.put("Id", String.valueOf(resultSet.getInt("Id")));
+			row.put("Name", resultSet.getString("Name"));
+			row.put("Description", resultSet.getString("Description"));
+			row.put("Quantity", String.valueOf(resultSet.getInt("Quantity")));
+
+			result.add(row);
+		}
+		con.close();
+
+		return result;
 	}
 
     public void save(Object Product) {
