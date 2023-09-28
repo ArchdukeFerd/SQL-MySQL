@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import main.java.com.alura.jdbc.ConnectionLink;
+
 public class ProductController {
 
 	public void modify(String Name, String Description, Integer Id) {
@@ -21,7 +23,7 @@ public class ProductController {
 	}
 
 	public List<Map<String, String>> list() throws SQLException{
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/stock_control?useTimeZone=true&serverTimeZone=UTC","archdukeferdinand","Chuu2koi!");
+		Connection con = new ConnectionLink().retrieveConnection();
 		Statement statement = con.createStatement();
 		statement.execute("select Id, Name, Description, Quantity from product");
 		ResultSet resultSet = statement.getResultSet();

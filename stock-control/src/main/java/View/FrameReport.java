@@ -44,7 +44,7 @@ public void FrameReport(StockControlFrame StockControlFrame) {
 }
 
 private void loadReport() {
-    List<?> content = categoryController.uploadReport();
+    var content = categoryController.uploadReport();
     
     // TODO
     content.forEach(fila -> model
