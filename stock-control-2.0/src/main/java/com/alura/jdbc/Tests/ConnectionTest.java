@@ -1,7 +1,6 @@
 package src.main.java.com.alura.jdbc.Tests;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import src.main.java.com.alura.jdbc.Factory.ConnectionFactory;

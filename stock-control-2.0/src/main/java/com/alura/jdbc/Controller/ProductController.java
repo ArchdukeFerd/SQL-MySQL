@@ -1,7 +1,6 @@
 package src.main.java.com.alura.jdbc.Controller;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,11 +14,9 @@ import src.main.java.com.alura.jdbc.Factory.ConnectionFactory;
 public class ProductController {
 
 	public void modify(String Name, String Description, Integer Id) {
-		// TODO
 	}
 
 	public void delete(Integer Id) {
-		// TODO
 	}
 
 	public List<Map<String, String>> list() throws SQLException{

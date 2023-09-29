@@ -44,8 +44,6 @@ public class FrameReport extends JFrame {
 
     private void loadReport() {
         var content = categoryController.uploadReport();
-        
-        // TODO
         content.forEach(fila -> model
                 .addRow(new Object[] {}));
     }

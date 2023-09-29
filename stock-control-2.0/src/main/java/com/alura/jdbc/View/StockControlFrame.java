@@ -100,9 +100,7 @@ private void configureFormFields(Container container) {
     categoryCombo = new JComboBox<>();
     categoryCombo.addItem("Pick a Category");
 
-    // TODO
     var categories = this.categoryController.list();
-    // categorias.forEach(categoria -> comboCategoria.addItem(categoria));
 
     nameText.setBounds(10, 25, 265, 20);
     descriptionText.setBounds(10, 65, 265, 20);
@@ -239,7 +237,6 @@ private void save() {
         return;
     }
 
-    // TODO
     var product = new HashMap<String, String>(); 
     product.put("Name", nameText.getText());
     product.put("Description", descriptionText.getText());
@@ -249,7 +246,6 @@ private void save() {
     try {
         this.productController.save(product);
     } catch (SQLException e) {
-        // TODO Auto-generated catch block
         throw new RuntimeException();
     }
 
