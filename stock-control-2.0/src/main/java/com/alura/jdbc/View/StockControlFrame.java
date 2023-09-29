@@ -7,6 +7,9 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Optional;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -198,7 +201,7 @@ private void delete() {
 
     Optional.ofNullable(model.getValueAt(table.getSelectedRow(), table.getSelectedColumn()))
             .ifPresentOrElse(row -> {
-                Integer Id = (Integer) model.getValueAt(table.getSelectedRow(), 0);
+                Integer Id = Integer.valueOf(model.getValueAt(table.getSelectedRow(), 0).toString());
 
                 this.productController.delete(Id);
 
