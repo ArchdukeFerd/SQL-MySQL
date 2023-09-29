@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class ConnectionLink {
     public Connection retrieveConnection() throws SQLException {
-		return DriverManager.getConnection("jdbc:admin:///var/lib/mysql?useTimeZone=true&serverTimeZone=UTC","root","");
+		return DriverManager.getConnection("jdbc:mysql://localhost/stock_control?useTimeZone=true&serverTimeZone=UTC","root","");
 
     }
 }

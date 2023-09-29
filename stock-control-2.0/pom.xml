@@ -5,7 +5,7 @@
 <modelVersion>4.0.0</modelVersion>
 
 <groupId>com.alura</groupId>
-<artifactId>stock-control</artifactId>
+<artifactId>stock-control-2.0</artifactId>
 <version>1.0-SNAPSHOT</version>
 
 <name>Stock Control</name>
