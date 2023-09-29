@@ -27,14 +27,14 @@ private static final long serialVersionUID = 1L;
 private JLabel nameLabel, descriptionLabel, quantityLabel, categoryLabel;
 private JTextField nameText, descriptionText, quantityText;
 private JComboBox<Object> categoryCombo;
-private JButton saveButton, modfyButton, clearButton, deleteButton, reportButton;
+private JButton saveButton, modifyButton, clearButton, deleteButton, reportButton;
 private JTable table;
 private DefaultTableModel model;
 private ProductController productController;
 private CategoryController categoryController;
 
 public StockControlFrame() {
-    super("Productos");
+    super("Products");
 
     this.categoryController = new CategoryController();
     this.productController = new ProductController();
@@ -63,15 +63,15 @@ private void configureContentsTable(Container container) {
     table.setBounds(10, 205, 760, 280);
 
     deleteButton = new JButton("Delete");
-    modfyButton = new JButton("Modify");
+    modifyButton = new JButton("Modify");
     reportButton = new JButton("Get Report");
     deleteButton.setBounds(10, 500, 80, 20);
-    modfyButton.setBounds(100, 500, 80, 20);
+    modifyButton.setBounds(100, 500, 80, 20);
     reportButton.setBounds(190, 500, 80, 20);
 
     container.add(table);
     container.add(deleteButton);
-    container.add(modfyButton);
+    container.add(modifyButton);
     container.add(reportButton);
 
     setSize(800, 600);
@@ -149,7 +149,7 @@ private void configureFormActions() {
         }
     });
 
-    modfyButton.addActionListener(new ActionListener() {
+    modifyButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             modify();
             clearTable();
@@ -229,10 +229,10 @@ private void save() {
         return;
     }
 
-    Integer qauntityInt;
+    Integer quantityInt;
 
     try {
-        qauntityInt = Integer.parseInt(quantityText.getText());
+        quantityInt = Integer.parseInt(quantityText.getText());
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, String
                 .format("The -Quantity- field must be numerical in the range between %d and %d", 0, Integer.MAX_VALUE));
@@ -243,7 +243,7 @@ private void save() {
     var product = new HashMap<String, String>(); 
     product.put("Name", nameText.getText());
     product.put("Description", descriptionText.getText());
-    product.put("Quantity", String.valueOf(qauntityInt));
+    product.put("Quantity", String.valueOf(quantityInt));
     var category = categoryCombo.getSelectedItem();
 
     try {
