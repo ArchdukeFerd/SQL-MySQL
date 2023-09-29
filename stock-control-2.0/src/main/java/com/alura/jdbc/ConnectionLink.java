@@ -1,4 +1,4 @@
-package main.java.com.alura.jdbc;
+package src.main.java.com.alura.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

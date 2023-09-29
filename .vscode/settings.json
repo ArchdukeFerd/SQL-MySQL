@@ -2,6 +2,7 @@
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.debug.settings.onBuildFailureProceed": true,
     "java.project.sourcePaths": [
-        "stock-control"
+        "stock-control",
+        "stock-control-2.0"
     ]
 }

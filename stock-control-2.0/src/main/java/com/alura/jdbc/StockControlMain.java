@@ -1,8 +1,8 @@
-package com.alura.jdbc;
+package src.main.java.com.alura.jdbc;
 
 import javax.swing.JFrame;
 
-import com.alura.jdbc.View.StockControlFrame;
+import src.main.java.com.alura.jdbc.View.StockControlFrame;
 
 public class StockControlMain {
 

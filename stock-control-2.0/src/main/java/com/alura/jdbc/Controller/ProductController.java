@@ -1,4 +1,4 @@
-package com.alura.jdbc.Controller;
+package src.main.java.com.alura.jdbc.Controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import main.java.com.alura.jdbc.ConnectionLink;
+import src.main.java.com.alura.jdbc.ConnectionLink;
 
 public class ProductController {
 
