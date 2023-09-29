@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import src.main.java.com.alura.jdbc.ConnectionLink;
+import src.main.java.com.alura.jdbc.Factory.ConnectionFactory;
 
 public class ConnectionTest {
     public static void main(String[] args) throws SQLException {
-		Connection con = new ConnectionLink().retrieveConnection();
+		Connection con = new ConnectionFactory().retrieveConnection();
 
 
         System.out.println("Closing Connection");

@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Optional;
 
 import javax.swing.JButton;
@@ -239,10 +240,19 @@ private void save() {
     }
 
     // TODO
-    var product = new Object[] { nameText.getText(), descriptionText.getText(), qauntityInt };
+    var product = new HashMap<String, String>(); 
+    product.put("Name", nameText.getText());
+    product.put("Description", descriptionText.getText());
+    product.put("Quantity", String.valueOf(qauntityInt));
     var category = categoryCombo.getSelectedItem();
 
-    this.productController.save(product);
+    try {
+        this.productController.save(product);
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        throw new RuntimeException();
+    }
+
 
     JOptionPane.showMessageDialog(this, "Successfully registered");
 
