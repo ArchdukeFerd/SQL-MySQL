@@ -19,7 +19,7 @@ public class LoadDriver {
 
 public class ConnectionLink {
     public Connection retrieveConnection() throws SQLException {
-		return DriverManager.getConnection("jdbc:mysql://localhost/stock_control?useTimeZone=true&serverTimeZone=UTC","archdukeferdinand","Chuu2koi!");
+		return DriverManager.getConnection("jdbc:admin:///var/lib/mysql?useTimeZone=true&serverTimeZone=UTC","archdukeferdinand","Chuu2koi!");
 
     }
 }
