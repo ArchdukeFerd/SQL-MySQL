@@ -51,4 +51,8 @@ public class ProductController {
 		}
 	}
 
+    public int modify(String name, String description, Integer quantity, Integer id) {
+        return 0;
+    }
+
 }

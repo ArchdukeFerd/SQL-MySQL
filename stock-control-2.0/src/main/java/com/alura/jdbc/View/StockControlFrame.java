@@ -152,7 +152,12 @@ private void configureFormActions() {
 
     modifyButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-            modify();
+            try {
+                modify();
+            } catch (SQLException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
             clearTable();
             loadTable();
         }
@@ -177,19 +182,23 @@ private boolean selectedRow() {
     return table.getSelectedRowCount() == 0 || table.getSelectedColumnCount() == 0;
 }
 
-private void modify() {
+private void modify() throws SQLException {
     if (selectedRow()) {
         JOptionPane.showMessageDialog(this, "Please choose an item");
         return;
     }
 
     Optional.ofNullable(model.getValueAt(table.getSelectedRow(), table.getSelectedColumn()))
-            .ifPresentOrElse(fila -> {
-                Integer Id = (Integer) model.getValueAt(table.getSelectedRow(), 0);
+            .ifPresentOrElse(row -> {
+                Integer Id = Integer.valueOf(model.getValueAt(table.getSelectedRow(), 0).toString());
                 String Name = (String) model.getValueAt(table.getSelectedRow(), 1);
                 String Description = (String) model.getValueAt(table.getSelectedRow(), 2);
+                Integer Quantity = Integer.valueOf(model.getValueAt(table.getSelectedRow(), 3).toString());
 
-                this.productController.modify(Name, Description, Id);
+                int modifiedRows;
+                modifiedRows = this.productController.modify(Name, Description, Quantity, Id);
+
+                JOptionPane.showMessageDialog(this, String.format("%d success when modifying the item!", modifiedRows));
             }, () -> JOptionPane.showMessageDialog(this, "Please choose an item"));
 }
 
@@ -230,10 +239,10 @@ private void save() {
         return;
     }
 
-    Integer quantityInt;
+    Integer QuanInt;
 
     try {
-        quantityInt = Integer.parseInt(quantityText.getText());
+        QuanInt = Integer.parseInt(quantityText.getText());
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, String
                 .format("The -Quantity- field must be numerical in the range between %d and %d", 0, Integer.MAX_VALUE));
@@ -243,7 +252,7 @@ private void save() {
     var product = new HashMap<String, String>(); 
     product.put("Name", nameText.getText());
     product.put("Description", descriptionText.getText());
-    product.put("Quantity", String.valueOf(quantityInt));
+    product.put("Quantity", String.valueOf(QuanInt));
     var category = categoryCombo.getSelectedItem();
 
     try {
