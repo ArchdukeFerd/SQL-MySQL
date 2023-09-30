@@ -1,4 +1,4 @@
-package src.main.java.com.alura.jdbc.Controller;
+package com.alura.jdbc.Controller;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import src.main.java.com.alura.jdbc.Factory.ConnectionFactory;
+import com.alura.jdbc.Factory.ConnectionFactory;
 
 public class ProductController {
 
