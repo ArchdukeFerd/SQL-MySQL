@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import net.bytebuddy.asm.Advice.Local;
@@ -27,9 +28,8 @@ public class Pedido {
 	@ManyToOne
 	private Cliente cliente;
 
-	@ManyToOne
-	@JoinTable(name="items_pedidos")
-	private List<Producto> productos;
+	@OneToMany
+	private List<ItemsPedido> items;
 
 	public Pedido(Cliente cliente) {
 	this.cliente = cliente;
