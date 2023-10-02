@@ -35,12 +35,12 @@ public class ProductoDao {
 	}
 	
 	public List<Producto> consultarTodos(){
-		String jqpl= "SELECT P FROM Producto AS P";
+		String jqpl = "SELECT P FROM Producto AS P";
 		return em.createQuery(jqpl,Producto.class).getResultList();
 	}
 	
 	public List<Producto> consultaPorNombre(String nombre){
-		String jpql =" SELECT P FROM Producto AS P WHERE P.nombre=:nombre ";
+		String jpql ="SELECT P FROM Producto AS P WHERE P.nombre=:nombre";
 		return em.createQuery(jpql,Producto.class).setParameter("nombre", nombre).getResultList();
 	}
 	

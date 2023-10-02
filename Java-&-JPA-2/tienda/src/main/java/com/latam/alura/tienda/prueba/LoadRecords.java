@@ -6,9 +6,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import javax.persistence.EntityManager;
-
 import com.latam.alura.tienda.dao.CategoriaDao;
 import com.latam.alura.tienda.dao.ClienteDao;
 import com.latam.alura.tienda.dao.PedidoDao;
@@ -20,28 +18,38 @@ import com.latam.alura.tienda.modelo.Pedido;
 import com.latam.alura.tienda.modelo.Producto;
 import com.latam.alura.tienda.utils.JPAUtils;
 
+
 public class LoadRecords {
 	public static void cargarRegistros() throws FileNotFoundException {
-        EntityManager em = JPAUtils.getEntityManager();
-        CategoriaDao categoriaDao = new CategoriaDao(em);
-        ProductoDao productoDao = new ProductoDao(em);
-        ClienteDao clienteDao = new ClienteDao(em);
-        em.getTransaction().begin();
-        LoadCategoria("categoria", categoriaDao, em);
-        LoadProducto("producto", productoDao, em);
-        LoadCliente("cliente", clienteDao, em);
-        List<Cliente> clientesList = clienteDao.consultarTodos();
-        List<Pedido> pedidoList = new ArrayList<>();
-        for(Cliente cl:clientesList){
-            pedidoList.add(new Pedido(cl));
-        }
-        for(int i = 0; i<pedidoList.size();i++){
-            pedidoList.get(i).agregarItems(new ItemsPedido(i+1, productoDao.consultaPorId(long)(i+1),pedidoList.get(i)));
-            pedidoDao.guardar(pedidoList.get(i));
-        }
-        em.getTransaction().commit();
-        em.close();
-    }
+		EntityManager em = JPAUtils.getEntityManager();
+		CategoriaDao categoriaDao = new CategoriaDao(em);
+		ProductoDao productoDao = new ProductoDao(em);
+		ClienteDao clienteDao = new ClienteDao(em);
+		PedidoDao pedidoDao = new PedidoDao(em);
+		em.getTransaction().begin();
+		
+		loadCategoria("categoria",categoriaDao,em);
+		
+		loadProducto("producto",productoDao,categoriaDao,em);
+		
+		loadCliente("cliente",clienteDao,em);
+		
+		List<Cliente> clientesList = clienteDao.consultarTodos();
+		List<Pedido> pedidoList= new ArrayList<>();
+		
+		for(Cliente cl:clientesList) {
+			pedidoList.add(new Pedido(cl));
+		}
+		
+		for(int i=0;i<pedidoList.size();i++) {
+			pedidoList.get(i).agregarItems(new ItemsPedido(i+1,productoDao.consultaPorId((long) (i+1)),pedidoList.get(i)));
+			pedidoDao.guardar(pedidoList.get(i));
+		}
+		
+		em.getTransaction().commit();
+		em.close();
+		
+	}
 	
 	private static void loadProducto(String type, ProductoDao productoDao,CategoriaDao categoriaDao, EntityManager em) throws FileNotFoundException {
 		List<String> productosTxt =readFile(type);
