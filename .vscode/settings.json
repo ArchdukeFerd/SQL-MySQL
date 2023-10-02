@@ -1,13 +1,11 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.debug.settings.onBuildFailureProceed": true,
-    "java.project.sourcePaths": [
-        "stock-control",
-        "stock-control-2.0"
-    ],
+    "java.project.sourcePaths": [],
     "java.project.explorer.showNonJavaResources": true,
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "/usr/share/java/mysql-connector-java-8.1.0.jar"
-    ]
+    ],
+    "java.dependency.packagePresentation": "hierarchical"
 }
