@@ -15,16 +15,16 @@ import javax.persistence.Table;
 public class ItemsPedido {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private int cantidad;
 	private BigDecimal precioUnitario;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Producto producto;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Pedido pedido;
 
 	public ItemsPedido() {
