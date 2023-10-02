@@ -1,0 +1,319 @@
+2023-10-01 20:45:07.350864-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    alter table items_pedido \000a       drop \000a       [*]foreign key FKhshdf36fo6kflmxhom10pbn39"; expected "identifier"; SQL statement:
+
+    alter table items_pedido 
+       drop 
+       foreign key FKhshdf36fo6kflmxhom10pbn39 [42001-224]
+2023-10-01 20:45:07.354688-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    alter table items_pedido \000a       drop \000a       [*]foreign key FK7jlim4dtym775y1be8l1l7w3h"; expected "identifier"; SQL statement:
+
+    alter table items_pedido 
+       drop 
+       foreign key FK7jlim4dtym775y1be8l1l7w3h [42001-224]
+2023-10-01 20:45:07.356288-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    alter table pedidos \000a       drop \000a       [*]foreign key FKg7202lk0hwxn04bmdl2thth5b"; expected "identifier"; SQL statement:
+
+    alter table pedidos 
+       drop 
+       foreign key FKg7202lk0hwxn04bmdl2thth5b [42001-224]
+2023-10-01 20:45:07.357748-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    alter table productos \000a       drop \000a       [*]foreign key FK2fwq10nwymfv7fumctxt9vpgb"; expected "identifier"; SQL statement:
+
+    alter table productos 
+       drop 
+       foreign key FK2fwq10nwymfv7fumctxt9vpgb [42001-224]
+2023-10-01 20:45:07.360992-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "CATEGORIAS" because "FK2FWQ10NWYMFV7FUMCTXT9VPGB" depends on it; SQL statement:
+
+    drop table if exists categ [90107-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:108)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:133)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:246)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.latam.alura.tienda.utils.JPAUtils.<clinit>(JPAUtils.java:9)
+	at com.latam.alura.tienda.prueba.RegistroDePedido.registrarProducto(RegistroDePedido.java:42)
+	at com.latam.alura.tienda.prueba.RegistroDePedido.main(RegistroDePedido.java:21)
+2023-10-01 20:45:07.364616-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "CLIENTES" because "FKG7202LK0HWXN04BMDL2THTH5B" depends on it; SQL statement:
+
+    drop table if exists cli [90107-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:108)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:133)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:246)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.latam.alura.tienda.utils.JPAUtils.<clinit>(JPAUtils.java:9)
+	at com.latam.alura.tienda.prueba.RegistroDePedido.registrarProducto(RegistroDePedido.java:42)
+	at com.latam.alura.tienda.prueba.RegistroDePedido.main(RegistroDePedido.java:21)
+2023-10-01 20:45:07.386554-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table categorias (\000a       id bigint not null auto_increment,\000a        nombre varchar(255),\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table categorias (
+       id bigint not null auto_increment,
+        nombre varchar(255),
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 20:45:07.388218-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table clientes (\000a       id bigint not null auto_increment,\000a        dni varchar(255),\000a        nombre varchar(255),\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table clientes (
+       id bigint not null auto_increment,
+        dni varchar(255),
+        nombre varchar(255),
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 20:45:07.390211-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table items_pedido (\000a       id bigint not null auto_increment,\000a        cantidad integer not null,\000a        precioUnitario decimal(19,2),\000a        pedido_id bigint,\000a        producto_id bigint,\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table items_pedido (
+       id bigint not null auto_increment,
+        cantidad integer not null,
+        precioUnitario decimal(19,2),
+        pedido_id bigint,
+        producto_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 20:45:07.399588-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table pedidos (\000a       id bigint not null auto_increment,\000a        fecha date,\000a        valorTotal decimal(19,2),\000a        cliente_id bigint,\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table pedidos (
+       id bigint not null auto_increment,
+        fecha date,
+        valorTotal decimal(19,2),
+        cliente_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 20:45:07.404485-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table productos (\000a       id bigint not null auto_increment,\000a        descripcion varchar(255),\000a        fechaDeRegistro date,\000a        nombre varchar(255),\000a        precio decimal(19,2),\000a        categoria_id bigint,\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table productos (
+       id bigint not null auto_increment,
+        descripcion varchar(255),
+        fechaDeRegistro date,
+        nombre varchar(255),
+        precio decimal(19,2),
+        categoria_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 20:45:07.409289-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS_PEDIDO" not found; SQL statement:
+
+    alter table items_pedido 
+       add constraint FKhshdf36fo6kflmxhom10pbn39 
+       foreign key (pedido_id) 
+       references pedidos [42102-224]
+2023-10-01 20:45:07.411183-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS_PEDIDO" not found; SQL statement:
+
+    alter table items_pedido 
+       add constraint FK7jlim4dtym775y1be8l1l7w3h 
+       foreign key (producto_id) 
+       references productos [42102-224]
+2023-10-01 20:45:07.413023-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PEDIDOS" not found; SQL statement:
+
+    alter table pedidos 
+       add constraint FKg7202lk0hwxn04bmdl2thth5b 
+       foreign key (cliente_id) 
+       references clientes [42102-224]
+2023-10-01 20:45:07.415622-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCTOS" not found; SQL statement:
+
+    alter table productos 
+       add constraint FK2fwq10nwymfv7fumctxt9vpgb 
+       foreign key (categoria_id) 
+       references categorias [42102-224]
+2023-10-01 20:45:07.565680-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCTOS" not found; SQL statement:
+insert into productos (categoria_id, descripcion, fechaDeRegistro, nombre, precio) values (?, ?, ?, ?, ?) [42102-224]
+2023-10-01 21:15:59.888656-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS_PEDIDO" not found; SQL statement:
+
+    alter table items_pedido 
+       drop 
+       foreign key FKhshdf36fo6kflmxhom10pbn39 [42102-224]
+2023-10-01 21:15:59.897526-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS_PEDIDO" not found; SQL statement:
+
+    alter table items_pedido 
+       drop 
+       foreign key FK7jlim4dtym775y1be8l1l7w3h [42102-224]
+2023-10-01 21:15:59.916117-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PEDIDOS" not found; SQL statement:
+
+    alter table pedidos 
+       drop 
+       foreign key FKg7202lk0hwxn04bmdl2thth5b [42102-224]
+2023-10-01 21:15:59.921743-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCTOS" not found; SQL statement:
+
+    alter table productos 
+       drop 
+       foreign key FK2fwq10nwymfv7fumctxt9vpgb [42102-224]
+2023-10-01 21:15:59.942729-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table categorias (\000a       id bigint not null auto_increment,\000a        nombre varchar(255),\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table categorias (
+       id bigint not null auto_increment,
+        nombre varchar(255),
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 21:15:59.949004-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table clientes (\000a       id bigint not null auto_increment,\000a        dni varchar(255),\000a        nombre varchar(255),\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table clientes (
+       id bigint not null auto_increment,
+        dni varchar(255),
+        nombre varchar(255),
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 21:15:59.953010-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table items_pedido (\000a       id bigint not null auto_increment,\000a        cantidad integer not null,\000a        precioUnitario decimal(19,2),\000a        pedido_id bigint,\000a        producto_id bigint,\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table items_pedido (
+       id bigint not null auto_increment,
+        cantidad integer not null,
+        precioUnitario decimal(19,2),
+        pedido_id bigint,
+        producto_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 21:15:59.966187-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table pedidos (\000a       id bigint not null auto_increment,\000a        fecha date,\000a        valorTotal decimal(19,2),\000a        cliente_id bigint,\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table pedidos (
+       id bigint not null auto_increment,
+        fecha date,
+        valorTotal decimal(19,2),
+        cliente_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 21:15:59.970000-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table productos (\000a       id bigint not null auto_increment,\000a        descripcion varchar(255),\000a        fechaDeRegistro date,\000a        nombre varchar(255),\000a        precio decimal(19,2),\000a        categoria_id bigint,\000a        primary key (id)\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table productos (
+       id bigint not null auto_increment,
+        descripcion varchar(255),
+        fechaDeRegistro date,
+        nombre varchar(255),
+        precio decimal(19,2),
+        categoria_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2023-10-01 21:15:59.973259-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS_PEDIDO" not found; SQL statement:
+
+    alter table items_pedido 
+       add constraint FKhshdf36fo6kflmxhom10pbn39 
+       foreign key (pedido_id) 
+       references pedidos [42102-224]
+2023-10-01 21:15:59.982304-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS_PEDIDO" not found; SQL statement:
+
+    alter table items_pedido 
+       add constraint FK7jlim4dtym775y1be8l1l7w3h 
+       foreign key (producto_id) 
+       references productos [42102-224]
+2023-10-01 21:15:59.994381-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PEDIDOS" not found; SQL statement:
+
+    alter table pedidos 
+       add constraint FKg7202lk0hwxn04bmdl2thth5b 
+       foreign key (cliente_id) 
+       references clientes [42102-224]
+2023-10-01 21:15:59.997252-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCTOS" not found; SQL statement:
+
+    alter table productos 
+       add constraint FK2fwq10nwymfv7fumctxt9vpgb 
+       foreign key (categoria_id) 
+       references categorias [42102-224]
+2023-10-01 21:16:00.273634-06:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIAS" not found (this database is empty); SQL statement:
+insert into categorias (nombre) values (?) [42104-224]
+2023-10-01 21:29:46.754065-06:00 database: wrong user or password; user: "ROOT"
+org.h2.message.DbException: Wrong user name or password [28000-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:39)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:62)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:457)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:323)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:297)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:501)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:101)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:76)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:146)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.latam.alura.tienda.utils.JPAUtils.<clinit>(JPAUtils.java:9)
+	at com.latam.alura.tienda.prueba.RegistroDePedido.registrarProducto(RegistroDePedido.java:50)
+	at com.latam.alura.tienda.prueba.RegistroDePedido.main(RegistroDePedido.java:22)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 41 more
