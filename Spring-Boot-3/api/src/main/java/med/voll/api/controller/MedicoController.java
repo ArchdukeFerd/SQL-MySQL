@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import med.voll.api.direccion.DatosDireccion;
 import med.voll.api.medico.DatosActualizarMedico;
 import med.voll.api.medico.DatosListadoMedicos;
 import med.voll.api.medico.DatosRegistroMedico;
+import med.voll.api.medico.DatosRespuestaMedico;
 import med.voll.api.medico.Medico;
 import med.voll.api.medico.MedicoRepository;
 
@@ -33,6 +35,9 @@ public class MedicoController {
     public void registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico){
         System.out.println("El request llega correctamente");
         medicoRepository.save(new Medico(datosRegistroMedico));
+        // Return 201 Created
+        // URL donde encontrar al médico
+        // http://localhost:8080/medicos
     }
     @GetMapping
     public Page<DatosListadoMedicos> listadoMedico(@PageableDefault(size = 2)Pageable paginacion){
@@ -44,7 +49,7 @@ public class MedicoController {
     public ResponseEntity actualizarMedico(@RequestBody @Valid DatosActualizarMedico datosActualizarMedico){
         Medico medico = medicoRepository.getReferenceById(datosActualizarMedico.id());
         medico.actualizarDatos(datosActualizarMedico);
-        return ResponseEntity.ok(new DatosResouestaMedico(medico.getId(), medico.getNombre(), medico.getEmail(), medico.getTelefono(), medico.getEspecialidad().toString(), new DatosDireccion(medico.getDireccion().getCalle(), medico.getDireccion().getDistrito(), medico.getDireccion().getCiudad(), medico.getDireccion().getNumero(), medico.getDireccion().getComplemento())));
+        return ResponseEntity.ok(new DatosRespuestaMedico(medico.getId(), medico.getNombre(), medico.getEmail(), medico.getTelefono(), medico.getEspecialidad().toString(), new DatosDireccion(medico.getDireccion().getCalle(), medico.getDireccion().getDistrito(), medico.getDireccion().getCiudad(), medico.getDireccion().getNumero(), medico.getDireccion().getComplemento())));
     }
     @DeleteMapping("/{id}")
     @Transactional
