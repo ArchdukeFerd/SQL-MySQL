@@ -7,5 +7,6 @@
         "lib/**/*.jar",
         "/usr/share/java/mysql-connector-java-8.1.0.jar"
     ],
-    "java.dependency.packagePresentation": "hierarchical"
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.compile.nullAnalysis.mode": "automatic"
 }
